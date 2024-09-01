@@ -1,0 +1,10 @@
+Task,Validation Type,Accuracy,Precision
+FixationStability,First validation,0.633±0.220,0.038±0.014
+FixationStability,Last validation,0.753±0.336,0.038±0.015
+FixationStability,First vs Last,"t-stat = -4.55, p = 0.0000","t-stat = 0.61, p = 0.5403"
+FreeViewing,First validation,0.674±0.330,0.036±0.012
+FreeViewing,Last validation,0.786±0.382,0.039±0.015
+FreeViewing,First vs Last,"t-stat = -4.81, p = 0.0000","t-stat = -2.35, p = 0.0210"
+SmoothPursuit,First validation,0.662±0.264,0.036±0.013
+SmoothPursuit,Last validation,0.739±0.291,0.039±0.021
+SmoothPursuit,First vs Last,"t-stat = -3.33, p = 0.0012","t-stat = -1.69, p = 0.0949"
