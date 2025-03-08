@@ -3,6 +3,7 @@ import os.path
 
 import numpy as np
 import pandas as pd
+import tqdm
 
 
 def covertX(x):
@@ -47,7 +48,7 @@ id_list = []
 # the scale factor for converting Eyelink output capture video dimensions to phone dimensions
 SCALE_FACTOR = (1080 / 332, 2249 / 692)
 
-for subject_id in range(1, 33):
+for subject_id in tqdm.tqdm(range(1, 33)):
     # eyelink data path
     eyelink_data_path = glob.glob("dataset/eyelink/%02d/*.csv" % subject_id)
     # print(eyelink_data_path)
@@ -234,7 +235,7 @@ for subject_id in range(1, 33):
             if contains_nan: continue
 
             mean_distance = np.mean(eye_to_screen_distance)
-
+            print(mean_distance)
             mean_x = np.mean(x)
             mean_y = np.mean(y)
             mean_gt_x = np.mean(gt_x)

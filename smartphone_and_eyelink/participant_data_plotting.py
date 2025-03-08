@@ -14,7 +14,6 @@ plt.rcParams['font.size'] = 18
 arg = sys.argv
 data_source = arg[1]
 
-
 for i in range(1, 33):
     eyelink_data_path = glob.glob("dataset/eyelink/%02d/*.csv" % i)
     print(eyelink_data_path)

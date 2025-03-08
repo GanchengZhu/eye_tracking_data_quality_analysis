@@ -15,6 +15,9 @@ acc_max_value = 3
 pre_min_value = 0
 pre_max_value = 0.5
 
+me_min_value = 0
+me_max_value = 2.5
+
 n_row = 10
 n_col = 5
 
@@ -78,18 +81,22 @@ def mean_heatmap(heatmap_data):
             heatmap_data[i][j] = np.mean(heatmap_data[i][j])
 
 
-eyelink_data_source = glob.glob("results_correction/eyelink/subjects/eyelink_*.csv")
-phone_data_source = glob.glob("results_correction/phone/subjects/phone_*.csv")
+eyelink_data_source = glob.glob("data_quality_results/eyelink/subjects/eyelink_*.csv")
+phone_data_source = glob.glob("data_quality_results/phone/subjects/phone_*.csv")
 
 eyelink_acc_heatmap_data = []
 eyelink_pre_heatmap_data = []
+eyelink_me_heatmap_data = []
 phone_acc_heatmap_data = []
 phone_pre_heatmap_data = []
+phone_me_heatmap_data = []
 
 init_heatmap_data(eyelink_acc_heatmap_data)
 init_heatmap_data(eyelink_pre_heatmap_data)
+init_heatmap_data(eyelink_me_heatmap_data)
 init_heatmap_data(phone_pre_heatmap_data)
 init_heatmap_data(phone_acc_heatmap_data)
+init_heatmap_data(phone_me_heatmap_data)
 
 # eye_link
 for csv_data_path in eyelink_data_source:
@@ -106,6 +113,8 @@ for csv_data_path in eyelink_data_source:
             eyelink_acc_heatmap_data[index_y][index_x].append(row.accuracy)
         if not np.isnan(row.precision):
             eyelink_pre_heatmap_data[index_y][index_x].append(row.precision)
+        if not np.isnan(row.me):
+            eyelink_me_heatmap_data[index_y][index_x].append(row.me)
 
 # phone
 for csv_data_path in phone_data_source:
@@ -122,45 +131,73 @@ for csv_data_path in phone_data_source:
             phone_acc_heatmap_data[index_y][index_x].append(row.accuracy)
         if not np.isnan(row.precision):
             phone_pre_heatmap_data[index_y][index_x].append(row.precision)
+        if not np.isnan(row.me):
+            phone_me_heatmap_data[index_y][index_x].append(row.me)
 
 mean_heatmap(eyelink_acc_heatmap_data)
 mean_heatmap(eyelink_pre_heatmap_data)
-mean_heatmap(phone_pre_heatmap_data)
+mean_heatmap(eyelink_me_heatmap_data)
+
 mean_heatmap(phone_acc_heatmap_data)
+mean_heatmap(phone_pre_heatmap_data)
+mean_heatmap(phone_me_heatmap_data)
 
 # acc
-# 创建热力图
+# create heatmap
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10, 8))
-eyelink_heatmap = ax[1].imshow(eyelink_acc_heatmap_data, cmap='Blues', vmin=acc_min_value, vmax=acc_max_value)  # cmap参数指定色彩图
-phone_heatmap = ax[0].imshow(phone_acc_heatmap_data, cmap='Blues', vmin=acc_min_value, vmax=acc_max_value)  # cmap参数指定色彩图
-# 隐藏坐标轴
+eyelink_heatmap = ax[1].imshow(eyelink_acc_heatmap_data, cmap='Blues', vmin=acc_min_value,
+                               vmax=acc_max_value)  # cmap参数指定色彩图
+phone_heatmap = ax[0].imshow(phone_acc_heatmap_data, cmap='Blues', vmin=acc_min_value,
+                             vmax=acc_max_value)  # cmap参数指定色彩图
+# hide axis ticks
 ax[0].set_xticks(ticks=np.arange(n_col), labels=[f'{int((i + 0.5) * row_stride + min_x)}' for i in range(n_col)])
 ax[0].set_yticks(ticks=np.arange(n_row), labels=[f'{int((i + 0.5) * row_stride + min_y)}' for i in range(n_row)])
 ax[1].set_xticks(ticks=np.arange(n_col), labels=[f'{int((i + 0.5) * row_stride + min_x)}' for i in range(n_col)])
 ax[1].set_yticks(ticks=np.arange(n_row), labels=[f'{int((i + 0.5) * row_stride + min_y)}' for i in range(n_row)])
 
-# 添加色条以显示色彩映射
+# color mapping
 fig.colorbar(eyelink_heatmap, ax=ax[1])
 fig.colorbar(phone_heatmap, ax=ax[0])
-# 显示图形
+# show the figure
 plt.tight_layout()
-plt.savefig("./figures/heatmap_acc.jpg", dpi=300)
+plt.savefig("./figures/Fig. 5(A) heatmap_acc.jpg", dpi=300)
 
 # pre
-# 创建热力图
+# create heatmap
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10, 8))
-eyelink_heatmap = ax[1].imshow(eyelink_pre_heatmap_data, cmap='Reds', vmin=pre_min_value, vmax=pre_max_value)  # cmap参数指定色彩图
+eyelink_heatmap = ax[1].imshow(eyelink_pre_heatmap_data, cmap='Reds', vmin=pre_min_value,
+                               vmax=pre_max_value)  # cmap参数指定色彩图
 phone_heatmap = ax[0].imshow(phone_pre_heatmap_data, cmap='Reds', vmin=pre_min_value, vmax=pre_max_value)  # cmap参数指定色彩图
-# 隐藏坐标轴
+# hide axis ticks
 ax[0].set_xticks(ticks=np.arange(n_col), labels=[f'{int((i + 0.5) * row_stride + min_x)}' for i in range(n_col)])
 ax[0].set_yticks(ticks=np.arange(n_row), labels=[f'{int((i + 0.5) * row_stride + min_y)}' for i in range(n_row)])
 ax[1].set_xticks(ticks=np.arange(n_col), labels=[f'{int((i + 0.5) * row_stride + min_x)}' for i in range(n_col)])
 ax[1].set_yticks(ticks=np.arange(n_row), labels=[f'{int((i + 0.5) * row_stride + min_y)}' for i in range(n_row)])
 
-# 添加色条以显示色彩映射
+# color mapping
 fig.colorbar(eyelink_heatmap, ax=ax[1])
 fig.colorbar(phone_heatmap, ax=ax[0])
 
-# 显示图形
+# show the figure
 plt.tight_layout()
-plt.savefig("./figures/heatmap_pre.jpg", dpi=300)
+plt.savefig("./figures/Fig. 5(B) heatmap_pre.jpg", dpi=300)
+
+# ME
+# create heatmap
+fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10, 8))
+eyelink_heatmap = ax[1].imshow(eyelink_me_heatmap_data, cmap='Greens', vmin=me_min_value,
+                               vmax=me_max_value)  # cmap参数指定色彩图
+phone_heatmap = ax[0].imshow(phone_me_heatmap_data, cmap='Greens', vmin=me_min_value, vmax=me_max_value)  # cmap参数指定色彩图
+# hide axis ticks
+ax[0].set_xticks(ticks=np.arange(n_col), labels=[f'{int((i + 0.5) * row_stride + min_x)}' for i in range(n_col)])
+ax[0].set_yticks(ticks=np.arange(n_row), labels=[f'{int((i + 0.5) * row_stride + min_y)}' for i in range(n_row)])
+ax[1].set_xticks(ticks=np.arange(n_col), labels=[f'{int((i + 0.5) * row_stride + min_x)}' for i in range(n_col)])
+ax[1].set_yticks(ticks=np.arange(n_row), labels=[f'{int((i + 0.5) * row_stride + min_y)}' for i in range(n_row)])
+
+# color mapping
+fig.colorbar(eyelink_heatmap, ax=ax[1])
+fig.colorbar(phone_heatmap, ax=ax[0])
+
+# show the figure
+plt.tight_layout()
+plt.savefig("./figures/Fig. 5(C) heatmap_me.jpg", dpi=300)
