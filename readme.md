@@ -1,24 +1,23 @@
-# Experiment Source Code
+# Source Code for Experiments 1 and 2
 
-## Experiment 1: Smartphone Eye Tracking Data Quality with EyeLink
+## Experiment 1: Smartphone Eye Tracking Compared Against EyeLink
 
-You can found Android App source code [here](https://github.com/GanchengZhu/DataQualityWithEyeLink).
+The source code for the Android App used in the testing is available from  [here](https://github.com/GanchengZhu/DataQualityWithEyeLink).
 
 ## Experiment 2: Smartphone Eye Tracking for Depression Symptom Detection
 
-Android App source code [here](https://github.com/GanchengZhu/SmartphoneEyeTrackingDepression).
+The source code for the Android App is available from [here](https://github.com/GanchengZhu/SmartphoneEyeTrackingDepression).
 
-## Access to Smartphone Eye Tracking SDK
+## Accessing the Smartphone Eye Tracking SDK
 
-Please send an email to zhiguo@zju.edu.cn. Upon successful processing of your request,
-you will receive an email containing the Smartphone Eye Tracking SDK.
+To access the smartphone eye-tracking SDK reported in this paper, please send a request to zhiguo@zju.edu.cn. Please note that the smartphone eye-tracking SDK is intended for academic use only. You will need to sign an end-user agreement before we share the smartphone eye-tracking SDK.
 
 ### Email Prompt
 
-Here’s a template for your request email. Please keep the subject line unchanged:
+Please use the following email template for your request. Please keep the subject line unchanged:
 
 ```
-Subject: Request for Access to the Smartphone Eye Tracking SDK
+Subject: Request for Accessing the Smartphone Eye Tracking SDK
 
 Dear Prof. Zhiguo Wang,
 
@@ -26,7 +25,7 @@ I hope this message finds you well.
 
 My name is [Your Name], and I am a [student/researcher] at [Your Affiliation]. I am writing to request the Smartphone Eye Tracking SDK.
 
-I assure you that I will use this SDK solely for academic and research purposes and will not utilize it for commercial activities or share it with others.
+We acknowledge that the use of this SDK is subject to certain restrictions. We will use this SDK solely for academic and research purposes, and we will not utilize it for commercial activities or disseminate it to others.
 
 Thank you for considering my request. I look forward to receiving access to the SDK.
 
