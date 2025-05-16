@@ -230,7 +230,7 @@ Now, we have a App Demo on the App Store, you can visit it [here](https://apps.a
 
 # Quick Start Guide for the iOS App
 
-Special Note:
+## **Special Note:**
 
 **Please use this app indoors.** All our models—including those from our previous work—were trained on indoor data. After completing calibration, any significant change in lighting may degrade tracking accuracy.
 
