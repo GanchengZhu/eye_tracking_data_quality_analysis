@@ -38,9 +38,11 @@ Best regards,
 # How to Integrate the SDK into Your App
 
 ## 1. Create a New Android Project  
+
 Create a new Android project in Android Studio or use the template project provided by this Android SDK.
 
 ![screenshots/img.png](screenshots/img.png)
+
 **Android Studio New Project Setup Diagram**  
 
 **Note:** The SDK is primarily written in Java, with a small portion in Kotlin. While Kotlin can seamlessly call Java code, this SDK has not been fully tested with Kotlin. Therefore, it is recommended to use Java for integration.  
@@ -50,8 +52,7 @@ Create a new Android project in Android Studio or use the template project provi
 ## 2. Gradle Integration of Local SDK  
 
 1. **Create a `lib-gaze-tracker` folder** in your project’s root directory. 
-
-    ![screenshots/img_1.png](screenshots/img_1.png)
+  ![screenshots/img_1.png](screenshots/img_1.png)
 
 2. Place `lib-gaze-tracker-release.aar` in this folder and configure its `build.gradle`:  
    ```groovy
@@ -229,12 +230,24 @@ Now, we have a App Demo on the App Store, you can visit it [here](https://apps.a
 
 # Quick Start Guide for the iOS App
 
+Special Note:
+
+**Please use this app indoors.** All our models—including those from our previous work—were trained on indoor data. After completing calibration, any significant change in lighting may degrade tracking accuracy.
+
+**During calibration, remain silent.** Mouth movements can alter facial and eye features and reduce calibration precision. If you must speak, please wear a mask to minimize facial motion.
+
+**Limit large head movements.** While the app tolerates some natural motion, excessive head movement can impair tracking. For the best results, you may want to use a headrest.
+
+**Poor tracking accuracy may occur in the bottom quarter of the screen.** Because users with thicker eyelids may have their lids obstruct key eye features.
+
 ## 1. Initiate Calibration  
 Tap the `CALIBRATION` button on the main screen.  
-![Main Page](screenshots/2025_05_14_12_46_IMG_0187.PNG)  
+
+![Main Page](screenshots/2025_05_14_12_46_IMG_0187.PNG)
 
 ## 2. Start Calibration Process  
 A dialog will appear – select the `Calibration` button to begin eye-tracking calibration.  
+
 ![Calibration Prompt](screenshots/2025_05_14_12_47_IMG_0189.PNG)  
 
 ## 3. Validate or Exit  
@@ -249,6 +262,7 @@ From the main page:
    - Live front camera feed  
    - Letter grid (A-X)  
    - Real-time **green dot** indicating gaze position  
+
 ![Gaze Demo](screenshots/2025_05_16_10_51_IMG_0196.PNG)  
 
 ## 5. Customize Settings  
