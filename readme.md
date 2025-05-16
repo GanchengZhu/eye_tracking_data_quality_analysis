@@ -227,6 +227,45 @@ public class ExampleActivity extends AppCompatActivity
 IOS SDK iS developing. 
 Now, we have a App Demo on the App Store, you can visit it [here](https://apps.apple.com/cn/app/tcci-mobile-et/id6723893485).
 
+## IOS App Demo Usage
+
+### Quick Start
+# Step-by-Step Guide  
+
+## 1. Initiate Calibration  
+Tap the `CALIBRATION` button on the main screen.  
+![Main Page](screenshots/2025_05_14_12_46_IMG_0187.PNG)  
+
+## 2. Start Calibration Process  
+A dialog will appear – select the `Calibration` button to begin eye-tracking calibration.  
+![Calibration Prompt](screenshots/2025_05_14_12_47_IMG_0189.PNG)  
+
+## 3. Validate or Exit  
+After completing calibration:  
+- **If calibration error < 1.0 cm**: Tap `Validation` to enter the validation phase (follow the moving target with your gaze).  
+- **To exit**: Tap `Quit` to return to the main screen.  
+
+## 4. Gaze Tracking Demo  
+From the main page:  
+1. Select `GAZE TRACKER`  
+2. Features include:  
+   - Live front camera feed  
+   - Interactive letter grid (A-X)  
+   - Real-time **green dot** indicating gaze position  
+![Gaze Demo](screenshots/2025_05_16_10_51_IMG_0196.PNG)  
+
+## 5. Customize Settings  
+Access preferences via the `SETTING` button:  
+- Adjustable parameters:  
+  - Calibration/validation methods  
+  - Screen orientation  
+  - Target size  
+- Advanced options:  
+  - Camera coordinates (⚠️ Modify only with MGazeNet paper reference)  
+![Settings Page](screenshots/2025_05_14_12_46_IMG_0188.PNG)  
+
+## 6. Review Validation Data  
+Navigate to `View Eye Tracking Data` in the settings menu to access records.  
 ---
 
 # Experiment Data Analysis
