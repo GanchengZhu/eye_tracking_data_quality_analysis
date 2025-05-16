@@ -91,7 +91,7 @@ Create a new Android project in Android Studio or use the template project provi
     import org.gaze.tracker.core.GazeTracker;
     import org.gaze.tracker.widget.AutoFitSurfaceView;
     ```  
-- Init gaze tracker.
+- Initialize gaze tracker.
     ```java
     private void initGazeTracker() {
         GazeTracker.create(this, (gazeTracker, initializationErrors) -> {
@@ -130,7 +130,7 @@ Create a new Android project in Android Studio or use the template project provi
     }
     ```
 
-- The SDK need to previewer user's face via Android `SurfaceView`.
+- To preview user's face using Android `SurfaceView`.
     ```Java
    @Override
     public void surfaceCreated(@NonNull SurfaceHolder surfaceHolder) {
@@ -170,7 +170,7 @@ Create a new Android project in Android Studio or use the template project provi
   ```
 ## 4. Sample Gaze Data
 
-- Your experiment android activity or fragment must be implemented `GazeCallback`, like
+- Your Activity or Fragment needs to implement a specific interface — likely called GazeCallback — which the SDK uses to deliver gaze-related updates (e.g., gaze coordinates, timestamps, validity flags).
 ```Java
 import org.gaze.tracker.bean.GazeSample;
 import org.gaze.tracker.core.GazeTracker;
@@ -224,13 +224,10 @@ public class ExampleActivity extends AppCompatActivity
 
 # IOS SDK Documentation
 
-IOS SDK iS developing. 
+IOS SDK is developing. 
 Now, we have a App Demo on the App Store, you can visit it [here](https://apps.apple.com/cn/app/tcci-mobile-et/id6723893485).
 
-## IOS App Demo Usage
-
-### Quick Start
-# Step-by-Step Guide  
+# Quick Start Guide for the iOS App
 
 ## 1. Initiate Calibration  
 Tap the `CALIBRATION` button on the main screen.  
@@ -260,8 +257,8 @@ Access preferences via the `SETTING` button:
   - Calibration/validation methods  
   - Screen orientation  
   - Target size  
-- Advanced options:  
-  - Camera coordinates (⚠️ Modify only with MGazeNet paper reference)  
+  - Advanced options:  
+  - Camera coordinates (⚠️ If modified, please refer to [this paper](http://dx.doi.org/10.1155/2024/2644725) for details.)
 ![Settings Page](screenshots/2025_05_14_12_46_IMG_0188.PNG)  
 
 ## 6. Review Validation Data  
