@@ -250,7 +250,7 @@ From the main page:
 1. Select `GAZE TRACKER`  
 2. Features include:  
    - Live front camera feed  
-   - Interactive letter grid (A-X)  
+   - Letter grid (A-X)  
    - Real-time **green dot** indicating gaze position  
 ![Gaze Demo](screenshots/2025_05_16_10_51_IMG_0196.PNG)  
 
@@ -265,7 +265,7 @@ Access preferences via the `SETTING` button:
 ![Settings Page](screenshots/2025_05_14_12_46_IMG_0188.PNG)  
 
 ## 6. Review Validation Data  
-Navigate to `View Eye Tracking Data` in the settings menu to access records.  
+Navigate to `View Eye Tracking Data` in the settings menu to access records during validation procedure.  
 
 ---
 
