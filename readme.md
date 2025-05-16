@@ -266,6 +266,7 @@ Access preferences via the `SETTING` button:
 
 ## 6. Review Validation Data  
 Navigate to `View Eye Tracking Data` in the settings menu to access records.  
+
 ---
 
 # Experiment Data Analysis
