@@ -230,15 +230,19 @@ Now, we have a App Demo on the App Store, you can visit it [here](https://apps.a
 
 # Quick Start Guide for the iOS App
 
-## **Special Note:**
+## **Six suggestions for improving eye tracking accuracy**
 
-**Please use this app indoors.** All our models—including those from our previous work—were trained on indoor data. After completing calibration, any significant change in lighting may degrade tracking accuracy.
+**Please use this app indoors.** All of our models—including those from previous work—were trained on indoor data. After calibration, any significant change in lighting may degrade tracking accuracy.
 
-**During calibration, remain silent.** Mouth movements can alter facial and eye features and reduce calibration precision. If you must speak, please wear a mask to minimize facial motion.
+**During calibration, remain silent.** Mouth movements can alter facial and eye features and reduce precision. If you must speak, please wear a mask to minimize facial motion.
 
-**Limit large head movements.** While the app tolerates some natural motion, excessive head movement can impair tracking. For the best results, you may want to use a headrest.
+**Keep your head movement minimal.** While the app tolerates natural motion, excessive head movement can impair tracking. For optimal results, consider using a headrest.
 
-**Poor tracking accuracy may occur in the bottom quarter of the screen.** Because users with thicker eyelids may have their lids obstruct key eye features.
+**Keep your face centered on the screen.** Position your face at the screen’s center and maintain a distance of approximately 30–40 cm—matching the conditions of our training dataset. Sitting too far away may diminish the eye-related features needed for accurate gaze estimation.
+
+**Avoid the bottom quarter of the screen.** Tracking accuracy may suffer there, as users with thicker eyelids can have their lids obstruct key eye features.
+
+**Focus on the calibration target.** During calibration, keep your gaze fixed on the moving dot as it travels across the screen.
 
 ## 1. Initiate Calibration  
 Tap the `CALIBRATION` button on the main screen.  
