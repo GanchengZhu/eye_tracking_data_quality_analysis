@@ -8,7 +8,7 @@ rms_s2s = []
 acc = []
 subject_id = []
 
-base_path = "../raw_data"
+base_path = "../data_quality_raw_data"
 _subjects = os.listdir(base_path)
 
 import numpy as np

@@ -12,7 +12,7 @@ colors = ["#c82423", "#2878b5", "#007d7d"]
 
 # 设置字体
 plt.rcParams.update({'font.family': 'Arial',
-                     'font.weight': 'bold',
+                     # 'font.weight': 'bold',
                      'font.size': 14,
                      'axes.labelsize': 14,
                      'axes.labelweight': 'bold'})
@@ -44,9 +44,10 @@ for device_index, device_name in enumerate(["Portable Duo", "Smartphone"]):
 
         # 在左上角添加 (A), (B), (C)
         ax[metric_index].text(-0.2, 1.05, subplot_labels[metric_index], transform=ax[metric_index].transAxes,
-                              fontsize=16, fontweight='bold', va='top', ha='left')
+                              fontsize=20, va='top', ha='left')
 
-        ax[metric_index].legend(loc='upper right')
+        legend_props = {'weight': 'bold'}  # 'weight' or 'fontweight'
+        ax[metric_index].legend(loc='upper right', prop=legend_props)
 
 plt.tight_layout()
 os.makedirs("figures", exist_ok=True)

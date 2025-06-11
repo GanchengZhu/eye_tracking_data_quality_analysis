@@ -316,4 +316,8 @@ cd smartphone_and_eyelink
 python statistical_test.py
 ```
 
+## Exp 2 depression symptom eye movement data
+
+[Here](smartphone_depression_symptoms/readme.md) are data and labels
+
 ---
